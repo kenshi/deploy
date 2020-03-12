@@ -27,7 +27,11 @@ deploy
 - 브라우저 가동
 - 13.125.44.81 접속
 - 접속로그 확인 (리눅스에서 진행)
-- $ tail -f /var/apache2/access.log
+- $ tail -f /var/log/apache2/access.log
+- 모니터링하다가
+- 빠져나가기 => ctrl + c
+- 에러로그
+- $ tail -f /var/log/apache2/error.log
 
 # 이후작업
 - 코드수정
@@ -47,3 +51,10 @@ deploy
   $ rm -r -f .virtualenvs
 - 로컬 PC
   $ fab new_server
+
+# 가상 호스트가 설정된 부분
+- deploy는 프로젝트명(deploy.json)
+- /etc/apache2/sites-available/deploy.conf
+- 파일 읽기
+  $ cat /etc/apache2/sites-available/deploy.conf
+  
