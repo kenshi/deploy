@@ -15,7 +15,7 @@ deploy
 - 코드 작성
 - 배포 관련 환경변수 파일 수정 ( deploy.json )
 - git 주소, 서버의 IP, 도메인은 향후 IP와 연결(호스팅쪽), 리눅스 접속 계정 ID등 설정
-- reguirements.txt : 본서비스를 구동하기위해 사용된 모든 파이썬 패키지를 기술한다
+- requirements.txt : 본서비스를 구동하기위해 사용된 모든 파이썬 패키지를 기술한다
 
 # 구동
 - python3 버전 기반으로 수행
@@ -34,3 +34,16 @@ deploy
 - git 최신반영
 - 서버 업데이트
   $ fab deploy
+
+# 잘 않된다!!
+- 소스코드상에, 파일명, 설정값등 오타가 없어야함
+- git에 최종 소스가 모드 반영되어야함
+- 리눅스에서 기존의 흔적을 모두 제거
+  현재위치 : /home/ubuntu
+  프로젝트 삭제  : $ rm -r -f deploy  
+  숨김 파일 확인
+  $ ls -a 
+  가상환경 삭제  : 
+  $ rm -r -f .virtualenvs
+- 로컬 PC
+  $ fab new_server
